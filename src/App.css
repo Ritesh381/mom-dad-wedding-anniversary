@@ -1,0 +1,7 @@
+@import "tailwindcss";
+.hindi-text {
+    font-family: 'Noto Sans Devanagari', 'Arial Unicode MS', sans-serif;
+  }
+  body {
+    background-color: #FFF1F2;
+  }
