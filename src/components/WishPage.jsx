@@ -46,7 +46,7 @@ const WishPage = () => {
         .select();
       if (error) console.error(error);
       else setMessages(data);
-      console.log(data);
+      // console.log(data);
     }
     fetchMessages();
   }, []);
@@ -92,7 +92,7 @@ const WishPage = () => {
   const sendData = async (e) => {
     // Make the function async
     e.preventDefault();
-    console.log("Submitted:", formData.user, formData.message);
+    // console.log("Submitted:", formData.user, formData.message);
 
     try {
       // Await the validation promise
@@ -105,7 +105,7 @@ const WishPage = () => {
           })
       );
 
-      console.log("Validation result:", validation);
+      // console.log("Validation result:", validation);
 
       if (validation.isValidUser && validation.isValidMessage) {
         // Add the new message to your messages array

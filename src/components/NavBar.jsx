@@ -16,7 +16,7 @@ function NavBar() {
         <ul className="flex justify-center space-x-6 md:space-x-16">
           <li>
             <Link
-              to="/"
+              to="/home"
               className="text-pink-700 hover:text-pink-900 text-lg font-medium py-2 px-4 hover:bg-pink-200 rounded-lg transition-colors duration-300"
             >
               Home
