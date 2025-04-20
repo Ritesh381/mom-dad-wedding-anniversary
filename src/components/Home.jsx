@@ -18,7 +18,7 @@ function Home() {
         />
         <iframe
           className="border rounded-3xl m-3 size-60 w-[90%]"
-          src="https://www.youtube.com/embed/S9NFCNDtjDU"
+          src="https://www.youtube.com/embed/CoEGYErLSyQ"
           frame_border="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen

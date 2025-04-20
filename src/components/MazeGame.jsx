@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Confetti from 'react-confetti';
 
-// Placeholder images - replace with your actual images
-const dadImage = 'src/Images/dada.jpg';
-const momImage = 'src/Images/mama.jpg';
+// Image imports
+const dadImage = 'src/Images/maze-game-images/dada.jpg';
+const momImage = 'src/Images/maze-game-images/mama.jpg';
+const togetherImage = 'src/Images/maze-game-images/mom-dad-together.png';
 
 const MazeGame = () => {
-  // Maze layout (1 = wall, 0 = path)
   const mazeLayout = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ,1 ,1],
     [1, 0, 0, 0, 1, 0, 1, 1, 1, 1 ,0 ,1],
@@ -22,8 +22,8 @@ const MazeGame = () => {
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ,1 ,1]
   ];
 
-  const [position, setPosition] = useState({ x: 1, y: 1 }); // Dad's starting position
-  const [momPosition] = useState({ x: 10, y: 10 }); // Mom's position
+  const [position, setPosition] = useState({ x: 1, y: 1 });
+  const [momPosition] = useState({ x: 10, y: 10 });
   const [showConfetti, setShowConfetti] = useState(false);
   const [gameWon, setGameWon] = useState(false);
   const [windowSize, setWindowSize] = useState({
@@ -31,7 +31,6 @@ const MazeGame = () => {
     height: typeof window !== 'undefined' ? window.innerHeight : 0,
   });
 
-  // Handle window resize for confetti
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({
@@ -39,51 +38,38 @@ const MazeGame = () => {
         height: window.innerHeight,
       });
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Check if dad reached mom
   useEffect(() => {
     if (position.x === momPosition.x && position.y === momPosition.y) {
       setGameWon(true);
       setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 5000); // Confetti lasts 5 seconds
+      setTimeout(() => setShowConfetti(false), 5000);
     }
   }, [position, momPosition]);
 
   const moveDad = (direction) => {
     if (gameWon) return;
 
-    let newPosition = { ...position };
     let newX = position.x;
     let newY = position.y;
 
     switch (direction) {
-      case 'up':
-        newY = position.y - 1;
-        break;
-      case 'down':
-        newY = position.y + 1;
-        break;
-      case 'left':
-        newX = position.x - 1;
-        break;
-      case 'right':
-        newX = position.x + 1;
-        break;
-      default:
-        break;
+      case 'up': newY -= 1; break;
+      case 'down': newY += 1; break;
+      case 'left': newX -= 1; break;
+      case 'right': newX += 1; break;
+      default: break;
     }
 
-    // Check if new position is valid (not a wall)
-    if (newX >= 0 && newX < mazeLayout[0].length && 
-        newY >= 0 && newY < mazeLayout.length && 
-        mazeLayout[newY][newX] === 0) {
-      newPosition.x = newX;
-      newPosition.y = newY;
-      setPosition(newPosition);
+    if (
+      newX >= 0 && newX < mazeLayout[0].length &&
+      newY >= 0 && newY < mazeLayout.length &&
+      mazeLayout[newY][newX] === 0
+    ) {
+      setPosition({ x: newX, y: newY });
     }
   };
 
@@ -92,7 +78,6 @@ const MazeGame = () => {
     setGameWon(false);
   };
 
-  // Render maze grid
   const renderMaze = () => {
     const cells = [];
     for (let y = 0; y < mazeLayout.length; y++) {
@@ -112,8 +97,8 @@ const MazeGame = () => {
               border border-rose-200
             `}
           >
-            {isDad && <img src={dadImage} alt="Dad" className="w-3/4 h-3/4 object-cover" />}
-            {isMom && <img src={momImage} alt="Mom" className="w-3/4 h-3/4 object-cover" />}
+            {isDad && <img src={dadImage} alt="Dad" className="object-cover" />}
+            {isMom && <img src={momImage} alt="Mom" className="object-cover " />}
           </div>
         );
       }
@@ -122,10 +107,10 @@ const MazeGame = () => {
   };
 
   return (
-    <div className="p-4 max-w-md mx-auto bg-rose-50 rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-center text-rose-800 mb-2">Help Dad Find Mom!</h2>
-      <p className="text-center text-rose-600 mb-4">Navigate through the maze to reunite them</p>
-      
+    <div className="p-4 max-w-md mx-auto bg-rose-50 rounded-lg shadow-md text-center">
+      <h2 className="text-2xl font-bold text-rose-800 mb-2">Help them meet!</h2>
+      <p className="text-rose-600 mb-4">Navigate through the maze to reunite them</p>
+
       {showConfetti && (
         <Confetti 
           width={windowSize.width} 
@@ -134,97 +119,47 @@ const MazeGame = () => {
           numberOfPieces={200}
         />
       )}
-      
-      {gameWon && (
-        <div className="bg-green-100 text-green-800 p-3 rounded-lg mb-4">
-          <h3 className="font-bold text-lg">Congratulations!</h3>
-          <p>Dad found Mom! Just like in real life, they always find their way to each other ❤️</p>
-        </div>
+
+      {gameWon ? (
+        <>
+          <div className="flex justify-center my-6">
+            <div className="w-64 h-64 bg-pink-100 rounded-full flex items-center justify-center relative">
+              <div className="absolute w-full h-full animate-ping rounded-full bg-pink-200 opacity-50"></div>
+              <img src={togetherImage} alt="Mom and Dad Together" className="w-56 h-56 object-cover rounded-full border-4 border-rose-300 shadow-lg" />
+            </div>
+          </div>
+          <div className="bg-green-100 text-green-800 p-3 rounded-lg mb-4">
+            <h3 className="font-bold text-lg">Congratulations!</h3>
+            <p>They found each other! Just like in real life, they always find their way to each other ❤️</p>
+          </div>
+          <button
+            onClick={resetGame}
+            className="px-6 py-2 rounded-full bg-green-200 text-green-800 font-bold shadow-md hover:bg-green-300"
+          >
+            Play Again
+          </button>
+        </>
+      ) : (
+        <>
+          <div 
+            className={`grid gap-0.5 bg-rose-200 p-0.5 rounded w-full max-w-xs mx-auto`}
+            style={{ gridTemplateColumns: `repeat(${mazeLayout[0].length}, minmax(0, 1fr))` }}
+          >
+            {renderMaze()}
+          </div>
+
+          <div className="mt-6 flex flex-col items-center">
+            <button onClick={() => moveDad('up')} className="w-16 h-16 rounded-full bg-rose-200 text-2xl font-bold shadow-md mb-2">↑</button>
+            <div className="flex items-center">
+              <button onClick={() => moveDad('left')} className="w-16 h-16 rounded-full bg-rose-200 text-2xl font-bold shadow-md mr-4">←</button>
+              <button onClick={resetGame} className="w-20 h-12 rounded-full bg-green-200 text-sm font-bold shadow-md">Reset</button>
+              <button onClick={() => moveDad('right')} className="w-16 h-16 rounded-full bg-rose-200 text-2xl font-bold shadow-md ml-4">→</button>
+            </div>
+            <button onClick={() => moveDad('down')} className="w-16 h-16 rounded-full bg-rose-200 text-2xl font-bold shadow-md mt-2">↓</button>
+          </div>
+          <p className="text-sm text-rose-500 mt-4">Tap the arrows to move Dad through the maze</p>
+        </>
       )}
-      
-      <div 
-        className={`
-          grid gap-0.5 bg-rose-200 p-0.5 rounded
-          w-full max-w-xs mx-auto
-        `}
-        style={{
-          gridTemplateColumns: `repeat(${mazeLayout[0].length}, minmax(0, 1fr))`
-        }}
-      >
-        {renderMaze()}
-      </div>
-      
-      <div className="mt-6 flex flex-col items-center">
-        {/* Up button */}
-        <button 
-          onClick={() => moveDad('up')} 
-          className="
-            w-16 h-16 rounded-full bg-rose-200 text-rose-800
-            flex items-center justify-center text-2xl font-bold
-            active:bg-rose-300 active:scale-95 transition-all
-            shadow-md mb-2
-          "
-        >
-          ↑
-        </button>
-        
-        {/* Middle row */}
-        <div className="flex items-center my-1">
-          <button 
-            onClick={() => moveDad('left')} 
-            className="
-              w-16 h-16 rounded-full bg-rose-200 text-rose-800
-              flex items-center justify-center text-2xl font-bold
-              active:bg-rose-300 active:scale-95 transition-all
-              shadow-md mr-4
-            "
-          >
-            ←
-          </button>
-          
-          <button 
-            onClick={resetGame} 
-            className="
-              w-20 h-12 rounded-full bg-green-200 text-green-800
-              flex items-center justify-center text-sm font-bold
-              active:bg-green-300 active:scale-95 transition-all
-              shadow-md mx-2
-            "
-          >
-            Reset
-          </button>
-          
-          <button 
-            onClick={() => moveDad('right')} 
-            className="
-              w-16 h-16 rounded-full bg-rose-200 text-rose-800
-              flex items-center justify-center text-2xl font-bold
-              active:bg-rose-300 active:scale-95 transition-all
-              shadow-md ml-4
-            "
-          >
-            →
-          </button>
-        </div>
-        
-        {/* Down button */}
-        <button 
-          onClick={() => moveDad('down')} 
-          className="
-            w-16 h-16 rounded-full bg-rose-200 text-rose-800
-            flex items-center justify-center text-2xl font-bold
-            active:bg-rose-300 active:scale-95 transition-all
-            shadow-md mt-2
-          "
-        >
-          ↓
-        </button>
-      </div>
-      
-      {/* Mobile touch controls hint */}
-      <p className="text-center text-rose-500 text-sm mt-4">
-        Tap the arrows to move Dad through the maze
-      </p>
     </div>
   );
 };
