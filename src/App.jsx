@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import Loading from "./components/Loading";
 
 // Lazy load components
 const GiftBox = lazy(() => import("./components/GiftBox"));
@@ -13,7 +14,7 @@ const Footer = lazy(() => import("./components/Footer"));
 function App() {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loading/>}>
         <Routes>
           <Route path="/" element={<GiftBox />} />
           <Route
