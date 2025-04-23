@@ -13,14 +13,14 @@ function Home() {
           className="max-w-[600px] h-[300px] w-full mx-auto my-4 block border shadow-md rounded-lg"
           src="https://www.youtube.com/embed/S9NFCNDtjDU"
           frame_border="0"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer"
           allowFullScreen
         />
         <iframe
           className="max-w-[600px] h-[300px] w-full mx-auto my-4 block border shadow-md rounded-lg"
           src="https://www.youtube.com/embed/CoEGYErLSyQ"
           frame_border="0"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer"
           allowFullScreen
         />
 
