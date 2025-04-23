@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Confetti from "react-confetti";
-
-// Image imports
-const dadImage = "src/Images/dada.jpg";
-const momImage = "src/Images/mama.jpg";
-const togetherImage = "src/Images/maze-game-images/mom-dad-together.png";
+import dadImage from "../Images/dada.jpg"
+import momImage from "../Images/mama.jpg"
+import togetherImage from "../Images/maze-game-images/mom-dad-together.png" 
 
 const MazeGame = () => {
   const mazeLayout = [

@@ -1,4 +1,5 @@
 import React from "react";
+import bannerImg from '../Images/Banner-image.png';
 
 function Banner() {
   return (
@@ -6,7 +7,7 @@ function Banner() {
       {/* Blurred background version of the image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="src/Images/Banner-image.png"
+          src={bannerImg}
           alt=""
           className="w-full h-full object-cover filter blur-lg scale-110 opacity-50"
         />
@@ -15,7 +16,7 @@ function Banner() {
       {/* Main banner image */}
       <div className="relative z-10 m-3">
         <img 
-          src="src/Images/Banner-image.png"
+          src={bannerImg}
           alt="banner image"
           className="max-w-full h-auto shadow-lg rounded-lg"
         />

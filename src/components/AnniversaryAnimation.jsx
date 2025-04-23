@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import dadImage from "../Images/dada.jpg"
+import momImage from "../Images/mama.jpg"
 
 function AnniversaryAnimation() {
   const [visible, setVisible] = useState(false);
@@ -61,7 +63,7 @@ function AnniversaryAnimation() {
               <div className="absolute -inset-1 bg-pink-300 rounded-full blur-sm opacity-70"></div>
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-white relative z-10">
                 <img
-                  src="src/Images/mama.jpg"
+                  src={momImage}
                   alt="Mom"
                   className="w-full h-full object-cover"
                 />
@@ -80,7 +82,7 @@ function AnniversaryAnimation() {
               <div className="absolute -inset-1 bg-pink-300 rounded-full blur-sm opacity-70"></div>
               <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-white relative z-10">
                 <img
-                  src="src/Images/dada.jpg"
+                  src={dadImage}
                   alt="Dad"
                   className="w-full h-full object-cover"
                 />
