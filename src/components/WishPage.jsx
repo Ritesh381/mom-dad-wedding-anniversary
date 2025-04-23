@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { prompt } from "./prompt";
+import { prompt } from "./Prompt";
 
 const supabaseUrl = import.meta.env.VITE_PROJ_URL;
 const supabaseKey = import.meta.env.VITE_SUPABASE_API_KEY;
