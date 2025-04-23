@@ -43,7 +43,7 @@ const WishPage = () => {
     async function fetchMessages() {
       const { data, error } = await supabase
         .from("mom-dad-anniversary")
-        .select();
+        .select();  
       if (error) console.error(error);
       else setMessages(data);
       // console.log(data);
@@ -58,7 +58,10 @@ const WishPage = () => {
         message: msg,
       },
     ]);
-    if (error) console.error(Error);
+    if (error) {
+      console.error(Error);
+      alert("There was some error adding your message please try again.")
+    }
   };
 
   async function validate(promptText) {

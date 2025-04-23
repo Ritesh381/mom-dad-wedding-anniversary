@@ -4,7 +4,6 @@ import image2 from "../Images/flipgame/image2.jpg";
 import image3 from "../Images/flipgame/image3.jpg";
 import image4 from "../Images/flipgame/image4.jpg";
 import image5 from "../Images/flipgame/image5.jpg";
-import { div } from "framer-motion/client";
 
 const CardFlipGame = () => {
   const cardImages = [image1, image2, image3, image4, image5];

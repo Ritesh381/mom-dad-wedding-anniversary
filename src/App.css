@@ -5,3 +5,20 @@
   body {
     background-color: #FFF1F2;
   }
+
+  /* App.css */
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}

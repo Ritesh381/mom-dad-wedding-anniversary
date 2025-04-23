@@ -8,6 +8,7 @@ const NavBar = lazy(() => import("./components/NavBar"));
 const Home = lazy(() => import("./components/Home"));
 const Games = lazy(() => import("./components/Games"));
 const WishPage = lazy(() => import("./components/WishPage"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   return (
@@ -15,9 +16,44 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<GiftBox />} />
-          <Route path="/home" element={<div><NavBar /> <Home /></div>} />
-          <Route path="/games" element={<div><NavBar /> <Games /></div>} />
-          <Route path="/wishes" element={<div><NavBar /> <WishPage /></div>} />
+          <Route
+            path="/home"
+            element={
+              <div className="app-container">
+                <div className="page-content">
+                  <NavBar />
+                  <Home />
+                </div>
+                <Footer />
+              </div>
+            }
+          />
+
+          <Route
+            path="/games"
+            element={
+              <div className="app-container">
+                <div className="page-content">
+                  <NavBar />
+                  <Games />
+                </div>
+                <Footer />
+              </div>
+            }
+          />
+
+          <Route
+            path="/wishes"
+            element={
+              <div className="app-container">
+                <div className="page-content">
+                  <NavBar />
+                  <WishPage />
+                </div>
+                <Footer />
+              </div>
+            }
+          />
         </Routes>
       </Suspense>
     </Router>
