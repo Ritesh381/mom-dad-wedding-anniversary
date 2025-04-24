@@ -11,14 +11,14 @@ function Home() {
       <div className="flex-col justify-center items-center">
         <iframe
           className="max-w-[600px] h-[300px] w-full mx-auto my-4 block border shadow-md rounded-lg"
-          src="https://www.youtube.com/embed/S9NFCNDtjDU"
+          src="https://www.youtube.com/embed/CoEGYErLSyQ"
           frame_border="0"
           allow="accelerometer"
           allowFullScreen
         />
         <iframe
           className="max-w-[600px] h-[300px] w-full mx-auto my-4 block border shadow-md rounded-lg"
-          src="https://www.youtube.com/embed/CoEGYErLSyQ"
+          src="https://www.youtube.com/embed/S9NFCNDtjDU"
           frame_border="0"
           allow="accelerometer"
           allowFullScreen

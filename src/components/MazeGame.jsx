@@ -23,7 +23,7 @@ const MazeGame = () => {
   const [position, setPosition] = useState({ x: 1, y: 1 });
   const [momPosition] = useState({ x: 10, y: 10 });
   const [showConfetti, setShowConfetti] = useState(false);
-  const [gameWon, setGameWon] = useState(false);
+  const [gameWon, setGameWon] = useState(true);
   const [windowSize, setWindowSize] = useState({
     width: typeof window !== "undefined" ? window.innerWidth : 0,
     height: typeof window !== "undefined" ? window.innerHeight : 0,
@@ -157,7 +157,6 @@ const MazeGame = () => {
         <>
           <div className="flex justify-center my-6">
             <div className="w-64 h-64 bg-pink-100 rounded-full flex items-center justify-center relative">
-              <div className="absolute w-full h-full animate-ping rounded-full bg-pink-200 opacity-50"></div>
               <img
                 src={togetherImage}
                 alt="Mom and Dad Together"

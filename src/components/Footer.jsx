@@ -2,26 +2,42 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="bg-pink-200 text-gray-800 p-4 mt-10">
-      <div className="text-center text-xl mb-4 font-semibold">
+    <footer className="bg-pink-200 text-gray-800 px-6 py-6 mt-10 rounded-t-2xl shadow-inner">
+      <div className="text-center text-2xl font-bold text-pink-800 mb-4">
         Made with 💗 by आपका छोटू
       </div>
-      <div className="text-[15px] flex justify-between items-start flex-wrap text-sm">
+  
+      <div className="flex flex-col sm:flex-row justify-between gap-6 sm:items-start text-sm sm:text-base">
+        {/* Left Column */}
         <div>
-          <p className="font-medium mb-1">Wish them here:</p>
-          <a href="/wishes" className="text-blue-600 hover:underline">Wishes</a>
+          <p className="font-semibold mb-2 text-pink-700">Wish them here:</p>
+          <a href="/wishes" className="text-black hover:underline transition-all duration-200">
+            Wishes
+          </a>
         </div>
-        <div className="text-right">
-          <p className="font-medium mb-1">Quick Links:</p>
+  
+        {/* Right Column */}
+        <div className="text-left sm:text-right">
+          <p className="font-semibold mb-2 text-pink-700">Quick Links:</p>
           <ul className="space-y-1">
-            <li><a href="/home" className="text-blue-600 hover:underline">Home</a></li>
-            <li><a href="/games" className="text-blue-600 hover:underline">Games</a></li>
-            <li><a href="/contribution" className="text-blue-600 hover:underline">Contribution</a></li>
+            <li>
+              <a href="/home" className="text-black hover:underline transition-all duration-200">Home</a>
+            </li>
+            <li>
+              <a href="/games" className="text-black hover:underline transition-all duration-200">Games</a>
+            </li>
+            <li>
+              <a href="/contribution" className="text-black hover:underline transition-all duration-200">Contribution</a>
+            </li>
           </ul>
         </div>
       </div>
+  
+      {/* Date */}
+      <p className="text-center mt-6 text-xs text-gray-600 italic">For date: 26 April 2025</p>
     </footer>
   );
+  
 }
 
 export default Footer;

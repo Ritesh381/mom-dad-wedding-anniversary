@@ -1,0 +1,46 @@
+import React from 'react';
+// import './Contributions.css';
+
+function Contributions() {
+  return (
+    <div className="min-h-screen bg-pink-100 flex flex-col items-center justify-center px-4 py-10">
+      <h1 className="text-3xl md:text-4xl font-bold text-pink-700 mb-8 text-center">
+        Thanks everyone for helping me turn this thought into reality 💖
+      </h1>
+      <ul className="w-full max-w-md space-y-3">
+        <li className="family-head">Rishikesh Prince Prajapati</li>
+        
+        <li className="family-head">Balwant Prajapati</li>
+        
+        <li className="family-head">Anjali Prajapati</li>
+        <li className="family-member">Akansha</li>
+        <li className="family-member">Ananya</li>
+        <li className="family-member">Laddu</li>
+
+        <li className='family-head'>Sita Prajapati</li>
+        <li className="family-member">DJ</li>
+        <li className="family-member">Radio</li>
+
+        <li className="family-head">Geeta Prajapati</li>
+        <li className="family-member">Anu</li>
+        <li className="family-member">Anuj (Khesari)</li>
+
+        <li className="family-head">Mohan Prajapati</li>
+        
+        <li className="family-head">Gudiya Prajapati</li>
+        <li className="family-member">Krishna</li>
+        <li className="family-member">Anish (Kittu)</li>
+
+        <li className="family-head">Ram Niwas Prajapati</li>
+        <li className="family-member">Asha Prajapati</li>
+        <li className="family-member">Pikku</li>
+        
+        <li className="family-head">Amrita Prajapati</li>
+        
+        <li className="family-head">Sonu Prajapati</li>
+      </ul>
+    </div>
+  );
+}
+
+export default Contributions;

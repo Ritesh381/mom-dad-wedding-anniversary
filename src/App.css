@@ -22,3 +22,20 @@ html, body, #root {
 .page-content {
   flex: 1;
 }
+.family-head {
+  background-color: #ec407a; /* Dark pink */
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.family-member {
+  background-color: #ffd9e6; /* Light pink */
+  color: #333;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  margin-left: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
