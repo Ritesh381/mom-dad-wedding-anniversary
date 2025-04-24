@@ -23,7 +23,7 @@ const MazeGame = () => {
   const [position, setPosition] = useState({ x: 1, y: 1 });
   const [momPosition] = useState({ x: 10, y: 10 });
   const [showConfetti, setShowConfetti] = useState(false);
-  const [gameWon, setGameWon] = useState(true);
+  const [gameWon, setGameWon] = useState(false);
   const [windowSize, setWindowSize] = useState({
     width: typeof window !== "undefined" ? window.innerWidth : 0,
     height: typeof window !== "undefined" ? window.innerHeight : 0,

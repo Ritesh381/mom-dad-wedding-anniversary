@@ -34,7 +34,7 @@ function Footer() {
       </div>
   
       {/* Date */}
-      <p className="text-center mt-6 text-xs text-gray-600 italic">For date: 26 April 2025</p>
+      <p className="text-center mt-6 text-xs text-gray-600 italic"> 30 Years, One Journey, Infinite Memories – 26 April 2025</p>
     </footer>
   );
   
