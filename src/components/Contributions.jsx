@@ -43,6 +43,12 @@ function Contributions() {
         <li className="family-head">Amrita Prajapati</li>
         
         <li className="family-head">Sonu Prajapati</li>
+
+        <li className='family-head'>Rampravesh Prajapati</li>
+        <li className='family-member'>Ruby Prajapati</li>
+        <li className='family-member'>Aadit Prajapati</li>
+        <li className='family-member'>Nikku</li>
+        <li className='family-member'>Babu</li>
       </ul>
     </div>
   );
