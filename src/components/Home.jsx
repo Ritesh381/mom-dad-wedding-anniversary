@@ -10,15 +10,15 @@ function Home() {
       <AnniversaryAnimation />
       <div className="flex-col justify-center items-center">
         <iframe
-          className="max-w-[600px] h-[300px] w-full mx-auto my-4 block border shadow-md rounded-lg"
+          className="max-w-[530px] h-[300px] w-full mx-auto my-4 block border shadow-md rounded-lg"
           src="https://www.youtube.com/embed/N9kcPotqlYw"
           frame_border="0"
           allow="accelerometer"
           allowFullScreen
         />
         <iframe
-          className="max-w-[600px] h-[300px] w-full mx-auto my-4 block border shadow-md rounded-lg"
-          src="https://www.youtube.com/embed/vGrQewDUEbQ"
+          className="max-w-[530px] h-[300px] w-full mx-auto my-4 block border shadow-md rounded-lg"
+          src="https://www.youtube.com/embed/AJ608ohCETQ"
           frame_border="0"
           allow="accelerometer"
           allowFullScreen
