@@ -13,28 +13,33 @@ function Contributions() {
         <li className="family-head">Balwant Prajapati</li>
         
         <li className="family-head">Anjali Prajapati</li>
-        <li className="family-member">Akansha</li>
-        <li className="family-member">Ananya</li>
-        <li className="family-member">Laddu</li>
+        <li className="family-member">Akansha Prajapati</li>
+        <li className="family-member">Ananya Prajapati</li>
+        <li className="family-member">Ansh Prajapati (Laddu)</li>
 
         <li className='family-head'>Sita Prajapati</li>
-        <li className="family-member">DJ</li>
-        <li className="family-member">Radio</li>
+        <li className="family-member">Jay Prajapati (DJ)</li>
+        <li className="family-member">Bittu Prajapati (Radio)</li>
 
         <li className="family-head">Geeta Prajapati</li>
-        <li className="family-member">Anu</li>
-        <li className="family-member">Anuj (Khesari)</li>
+        <li className="family-member">Anu Prajapati</li>
+        <li className="family-member">Anuj Prajapati (Khesari)</li>
 
         <li className="family-head">Mohan Prajapati</li>
         
         <li className="family-head">Gudiya Prajapati</li>
-        <li className="family-member">Krishna</li>
+        <li className="family-member">Krishna Prajapati</li>
         <li className="family-member">Anish (Kittu)</li>
 
         <li className="family-head">Ram Niwas Prajapati</li>
         <li className="family-member">Asha Prajapati</li>
-        <li className="family-member">Pikku</li>
+        <li className="family-member">Anvi Prajapati</li>
         
+        <li className='family-head'>Jitendar Prajapati</li>
+        <li className='family-member'>Sonam Prajapati</li>
+        <li className='family-member'>Avani Prajapati</li>
+        <li className='family-member'>Anika Prajapati</li>
+
         <li className="family-head">Amrita Prajapati</li>
         
         <li className="family-head">Sonu Prajapati</li>
