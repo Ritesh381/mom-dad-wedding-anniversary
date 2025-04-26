@@ -8,6 +8,9 @@ Message Validation (message field):
 - true if: Contains genuine wishes
 - false if: Irrelevant content, gibberish, or lacks anniversary-related sentiment
 
+Exception:
+The anniversary is of Ishwar chandra prajapati and usha devi so if a person named IC Prajapati/ Ishwar chandra prajapati/ Usha/Usha devi tries to say thank you both the name and message are allowed.
+
 Response Format:
 Always return ONLY a JSON object with this exact structure:
 { "user": boolean, "message": boolean }
@@ -25,4 +28,10 @@ Examples:
 4. Input: { "user": "xysd!23", "message": "jfdsl kjfdsa kldsf" }
    Output: { "user": false, "message": false }
 
+5. Input: {"user": "IC Prajapati", "message":"Thank you everyone"}
+   Output: { "user": true, "message": true }
+
+8. Input: {"user": "Michael", "message": "Thank you everyone"}
+   Output: { "user": true, "message": false }
+   
 Now evaluate this input: `;
