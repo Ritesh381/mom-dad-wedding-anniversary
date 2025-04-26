@@ -14,7 +14,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 const Message = ({ user, message }) => {
   return (
     <div
-      className={"p-4 rounded-lg mb-4 bg-rose-50 border-l-4 border-rose-400"}
+      className={"p-4 rounded-lg mb-4 bg-rose-50 border-l-4 " +( user.includes("Ishwar") ? "border-green-400" : "border-rose-400")}
     >
       <div className={"font-bold text-rose-600"}>{user}</div>
       <div className="mt-1 text-gray-600">{message}</div>
